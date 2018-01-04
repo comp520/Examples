@@ -7,8 +7,6 @@ import tiny.node.*;
 
 class LineNumbers extends ReversedDepthFirstAdapter
 {
-	private int line = -1;
-
 	HashMap<Node, Integer> lines = new HashMap<Node, Integer>();
 
 	public void defaultOut(Node node)
