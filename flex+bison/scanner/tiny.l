@@ -45,7 +45,7 @@ DIGIT [0-9]
 	    printf ("Identifier: %s\n", yytext);
 }
 
-. 	    { printf ("Error, (line %d) unknown character: %s\n", yylineno, yytext); exit(1); }
+. 	    { fprintf (stderr, "Error: (line %d) unexpected character '%s'\n", yylineno, yytext); exit(1); }
 %%
 
 // The final section of a flex file contains the user code

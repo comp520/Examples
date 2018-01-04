@@ -64,5 +64,5 @@ DIGIT [0-9]
 	return tIDENTIFIER;
 }
 
-. 	{ printf ("Error, (line %d) unknown character: %s\n", yylineno, yytext); exit(1); }
+. 	{ fprintf (stderr, "Error: (line %d) unexpected character '%s'\n", yylineno, yytext); exit(1); }
 %%

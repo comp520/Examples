@@ -22,7 +22,7 @@ int yylex();
 // Otherwise it takes no arguments and it is up to the user to format the error using a minimal
 // description provided in yytext.
 void yyerror(const char *s) {
-	fprintf(stderr, "ERROR: (line %d) %s\n", yylineno, s);
+	fprintf(stderr, "Error: (line %d) %s\n", yylineno, s);
 	exit(1);
 }
 %}
