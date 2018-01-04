@@ -1,5 +1,5 @@
 *.o
 tiny
-y.tab.h
-y.tab.c
+parser.tab.h
+parser.tab.c
 lex.yy.c

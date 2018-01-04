@@ -11,4 +11,4 @@ parser.tab.c parser.tab.h: tiny.y
 lex.yy.c: tiny.l parser.tab.h
 	flex tiny.l
 clean:
-	rm y.tab.* lex.yy.*; rm *.o
+	rm parser.tab.* lex.yy.*; rm *.o
