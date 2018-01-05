@@ -4,8 +4,5 @@ tiny: grammar
 grammar: tiny.sablecc
 	sablecc tiny.sablecc
 
-check:
-	./check
-
 clean:	
-	rm -fr tiny/*.class tiny/lexer/ tiny/parser/ tiny/node/ tiny/analysis/ result
+	rm -fr tiny/*.class tiny/lexer/ tiny/parser/ tiny/node/ tiny/analysis/
