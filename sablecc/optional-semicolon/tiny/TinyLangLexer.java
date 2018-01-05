@@ -41,6 +41,19 @@ public class TinyLangLexer extends Lexer
 
 	protected void filter()
 	{
+		try {
+			// Thanks to Matthew Chan and Fan Ma for this fix!
+			// You must ignore whitespace at the end of the file (SableCC does NOT
+			// do this automatically)
+			while (token instanceof TBlank)
+			{
+				token = getToken();
+			}
+		}
+		catch (Exception e) {
+			System.err.println("Error: " + e.getLocalizedMessage());
+			System.exit(1);
+		}
 		if (needsSemiColon())
 		{
 			System.out.println("<inserted semicolon>");
