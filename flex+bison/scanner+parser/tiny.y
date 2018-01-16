@@ -54,7 +54,7 @@ void yyerror(const char *s) {
 %left '*' '/'
 
 /* Start token (by default if this is missing it takes the first production */
-%start program
+%start exp
 
 /* Generate the yylloc structure used for storing line numbers with tokens */
 %locations
@@ -65,16 +65,14 @@ void yyerror(const char *s) {
  * same LHS may be joined together and separated with a pipe.
  */
 %% 
-program: exp
-       ;
 
-exp : tIDENTIFIER
-    | tINTVAL
-    | exp '*' exp
-    | exp '/' exp
-    | exp '+' exp
-    | exp '-' exp
-    | '(' exp ')'
+exp : tIDENTIFIER { printf("Load %s\n", $1); }
+    | tINTVAL     { printf("Push %i\n", $1); }
+    | exp '*' exp { printf("Mult\n"); }
+    | exp '/' exp { printf("Div\n"); }
+    | exp '+' exp { printf("Plus\n"); }
+    | exp '-' exp { printf("Minus\n"); }
+    | '(' exp ')' { }
     ;
 
 %%
