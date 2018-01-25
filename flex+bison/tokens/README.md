@@ -4,6 +4,10 @@ To print tokens (and not execute the parser), you will be required to execute th
 
 If flex is used in isolation (there is no grammar or bison file), a single call to `yylex()` will scan the entire file, executing the actions for each token scanned. Printing tokens is as simple as adding a `printf` call to each scanner action.
 
+---
+
+If flex is used in combination with bison, then flex will only return a single token at a time from `yylex()`. Therefore
+
 1. In your main file, call `yylex()` in a loop until it returns `0`
 ```
 g_tokens = 1;
