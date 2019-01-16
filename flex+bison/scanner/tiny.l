@@ -51,7 +51,7 @@ DIGIT [0-9]
 // The final section of a flex file contains the user code
 int main()
 {
-	// Invoke the scanner using yylex(). Since there is no parser, this will execute unti
+	// Invoke the scanner using yylex(). Since there is no parser, this will execute until
 	// the end of file
 	yylex();
 	return 0;
